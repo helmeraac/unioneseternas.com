@@ -1,7 +1,7 @@
 <?php
 
 // configure
-$from = 'haavendanov@unal.edu.co';
+$from = 'unioneseternas.com@gmail.com';
 $sendTo = 'helmeraac@gmail.com';
 $subject = 'Nuevo mensaje en unioneseteranas.com';
 $fields = array('name' => 'Nombre', 'whatsapp' => 'Whatsapp', 'country' => 'País', 'message' => 'Mensaje'); // array variable name => Text to appear in the email
