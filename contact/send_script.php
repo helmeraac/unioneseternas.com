@@ -39,7 +39,7 @@ try
 }
 catch (\Exception $e)
 {
-    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
+    $responseArray = array('type' => 'danger', 'message' => $errorMessage, 'exception' => $e);
 }
 
 if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
