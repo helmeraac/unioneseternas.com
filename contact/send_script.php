@@ -15,13 +15,6 @@ try
     $emailText = nl2br("Tienes un nuevo mensaje del formulario de contacto\n");
 
     foreach ($_POST as $key => $value) {
-        if($key == "Message" || $key == "message"){
-            if(strlen($value) < 8){
-                throw new Exception("Error Processing Request", 1);
-                
-            }
-        }
-
         if (isset($fields[$key])) {
             $emailText .= nl2br("$fields[$key]: $value\n");
         }
