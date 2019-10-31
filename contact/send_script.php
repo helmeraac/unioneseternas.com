@@ -2,8 +2,8 @@
 
 // configure
 $from = 'unioneseternas.com@gmail.com';
-$sendTo = 'helmeraac@gmail.com';
-$subject = 'Nuevo mensaje en unioneseteranas.com';
+$sendTo = 'unioneseternas.com@gmail.com';
+$subject = 'Nuevo mensaje en unioneseternas.com';
 $fields = array('name' => 'Nombre', 'whatsapp' => 'Whatsapp', 'country' => 'País', 'message' => 'Mensaje'); // array variable name => Text to appear in the email
 $okMessage = 'El mensaje se envió correctamente, te contactaré lo mas pronto posible';
 $errorMessage = 'Ocurrió un error enviando el mensaje, si lo deseas puedes contactarme directamente';
