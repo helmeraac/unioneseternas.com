@@ -33,12 +33,12 @@
                     <p class="text-left" style="font-family: Merriweather, serif;color: #ffffff;"></p>
                 </div>
                 <div class="col-md-5 phone-preview" style="font-family: Merriweather, serif;padding-right: 30px;padding-left: 30px;">
-                    <form method="post" action="contact/send_script.php" style="background-color: #ffffff;padding: 40px;padding-bottom: 10px;width: 290px;margin: 0 auto;">
+                    <form id="contact-form" method="post" action="contact/send_script.php" style="background-color: #ffffff;padding: 40px;padding-bottom: 10px;width: 290px;margin: 0 auto;">
                         <p></p>
-                        <div class="form-group"><input class="form-control" type="text" placeholder="Nombre:" name="name"></div>
-                        <div class="form-group"><input class="form-control" type="text" name="whatsapp" placeholder="Whatsapp:"></div>
-                        <div class="form-group"><input class="form-control" type="text" name="country" placeholder="País:"></div>
-                        <div class="form-group"><textarea class="form-control" placeholder="Mensaje:" name="message"></textarea></div>
+                        <div class="form-group"><input class="form-control" type="text" placeholder="Nombre:" name="name" required></div>
+                        <div class="form-group"><input class="form-control" type="text" name="whatsapp" placeholder="Whatsapp:" required></div>
+                        <div class="form-group"><input class="form-control" type="text" name="country" placeholder="País:" required></div>
+                        <div class="form-group"><textarea class="form-control" placeholder="Mensaje:" name="message" required></textarea></div>
                         <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: #ff0000;font-size: 18px;width: 150px;margin-right: auto;margin-left: auto;border-width: 0;">ENVIAR</button></div>
                     </form>
                 </div>
@@ -156,12 +156,12 @@
                         de problemas, le ayudamos en situaciones difíciles y a distancia.&nbsp;<br><br><br></p>
                 </div>
                 <div class="col-md-5 phone-preview" style="font-family: Merriweather, serif;padding-right: 30px;padding-left: 30px;">
-                    <form method="post" action="contact/send_script.php" style="background-color: #ffffff;padding: 40px;padding-bottom: 10px;width: 290px;margin: 0 auto;">
+                    <form id="contact-form" method="post" action="contact/send_script.php" style="background-color: #ffffff;padding: 40px;padding-bottom: 10px;width: 290px;margin: 0 auto;">
                         <p></p>
-                        <div class="form-group"><input class="form-control" type="text" placeholder="Nombre:" name="name"></div>
-                        <div class="form-group"><input class="form-control" type="text" name="whatsapp" placeholder="Whatsapp:"></div>
-                        <div class="form-group"><input class="form-control" type="text" name="country" placeholder="País:"></div>
-                        <div class="form-group"><textarea class="form-control" placeholder="Mensaje:" name="message"></textarea></div>
+                        <div class="form-group"><input class="form-control" type="text" placeholder="Nombre:" name="name" required></div>
+                        <div class="form-group"><input class="form-control" type="text" name="whatsapp" placeholder="Whatsapp:" required></div>
+                        <div class="form-group"><input class="form-control" type="text" name="country" placeholder="País:" required></div>
+                        <div class="form-group"><textarea class="form-control" placeholder="Mensaje:" name="message" required></textarea></div>
                         <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: #ff0000;font-size: 18px;width: 150px;margin-right: auto;margin-left: auto;border-width: 0;">ENVIAR</button></div>
                     </form>
                 </div>
@@ -183,6 +183,26 @@
     })();
     </script>
     <!--End of Tawk.to Script-->
+    <script type="text/javascript">
+        $(function () {
+            $('#contact-form').on('submit', function (e) {
+                if (!e.isDefaultPrevented()) {
+                    var url = "contact/send_script.php";
+    
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: $(this).serialize(),
+                        success: function (data)
+                        {
+                            location.reload;
+                        }
+                    });
+                    return false;
+                }
+            });
+        });
+        </script>
 </body>
 
 </html>
