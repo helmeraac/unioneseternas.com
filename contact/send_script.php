@@ -37,7 +37,7 @@ try
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
 }
-catch (\Exception $e)
+catch (Exception $e)
 {
     $responseArray = array('type' => 'danger', 'message' => $errorMessage, 'exception' => $e);
 }
