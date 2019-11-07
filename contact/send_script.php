@@ -6,13 +6,13 @@ $sendTo = 'unioneseternas.com@gmail.com';
 $fields = array('name' => 'Nombre', 'whatsapp' => 'Whatsapp', 'country' => 'País', 'message' => 'Mensaje'); // array variable name => Text to appear in the email
 $okMessage = 'El mensaje se envió correctamente, te contactaré lo mas pronto posible';
 $errorMessage = 'Ocurrió un error enviando el mensaje, si lo deseas puedes contactarme directamente';
+$subject = 'Nuevo mensaje de ' + $fields[0] +  ' en unioneseternas.com';
 
 // let's do the sending
 
 try
 {
     $emailText = nl2br("Tienes un nuevo mensaje del formulario de contacto\n");
-    $subject = 'Nuevo mensaje de ' + $fields['name'] +  ' en unioneseternas.com';
 
     foreach ($_POST as $key => $value) {
         if (isset($fields[$key])) {
