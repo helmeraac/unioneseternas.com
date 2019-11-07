@@ -3,7 +3,6 @@
 // configure
 $from = 'unioneseternas.com@gmail.com';
 $sendTo = 'unioneseternas.com@gmail.com';
-$subject = 'Nuevo mensaje en unioneseternas.com';
 $fields = array('name' => 'Nombre', 'whatsapp' => 'Whatsapp', 'country' => 'País', 'message' => 'Mensaje'); // array variable name => Text to appear in the email
 $okMessage = 'El mensaje se envió correctamente, te contactaré lo mas pronto posible';
 $errorMessage = 'Ocurrió un error enviando el mensaje, si lo deseas puedes contactarme directamente';
@@ -13,6 +12,7 @@ $errorMessage = 'Ocurrió un error enviando el mensaje, si lo deseas puedes cont
 try
 {
     $emailText = nl2br("Tienes un nuevo mensaje del formulario de contacto\n");
+    $subject = 'Nuevo mensaje de ' + $fields['name'] +  ' en unioneseternas.com';
 
     foreach ($_POST as $key => $value) {
         if (isset($fields[$key])) {
